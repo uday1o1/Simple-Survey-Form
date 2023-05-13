@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Survey Form</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,31 +14,32 @@
     <div class="heading">Survey Form</div>
 
     <div class="form-details">
-        <form action="" class="input-fields">
-            <label for="name">Name <br>
-                <input type="text" placeholder="Enter your name" class="input">
+        <form class="input-fields">
+            <label for="nameInput">Name <br>
+                <input type="text" placeholder="Enter your name" class="input" id="name">
             </label><br>
-            <label for="age">Date of Birth <br>
-                <input type="date" min="17" max="21" class="input">
+            <label for="dobInput">Date of Birth <br>
+                <input type="date" min="17" max="21" class="input" id="dob">
             </label><br>
 
-            <label for="email">Email ID <br>
-                <input type="email" class="input">
+            <label for="emailInput">Email ID <br>
+                <input type="email" class="input" id="email">
             </label><br> <br>
 
-            <label for="q1">Brief on your current technical knowledge: <br>
-            <textarea name="ans1" id="" cols="35" class="input" rows="5"></textarea>
+            <label for="q1Input">Brief on your current technical knowledge: <br>
+            <textarea name="ans1" cols="35" rows="5" class="input" id="curKnowledge"></textarea>
             </label><br>
 
-            <label for="q2">What do you aim to achieve? <br>
-                <textarea name="ans2" id="" cols="35" rows="5" class="input"></textarea>
+            <label for="q2Input">What do you aim to achieve? <br>
+                <textarea name="ans2" cols="35" rows="5" class="input" id="aim"></textarea>
             </label><br>
 
-            <label for="q3">Describe your dream project in 50 words: <br>
-            <textarea name="ans3" id="" cols="35" rows="5" class="input"></textarea></label>
-            <!--js for word length-->
-            <button type="submit" class="button">SUBMIT</button>
+            <label for="q3Input">Describe your dream project in 50 words: <br>
+            <textarea name="ans3" cols="35" rows="5" class="input" id="dreamProject"></textarea></label>
+            <button type="submit" class="button" id="submitBtn">SUBMIT</button>
         </form>
     </div>
+
+    <script src="app.js" type="module"></script>
 </body>
 </html>

@@ -4,11 +4,17 @@ import {
   getFirestore,
   collection,
   addDoc,
+  deleteDoc,
+  getDocs,
+  getDoc,
+  doc,
 } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAOiVMEP_3xzrIgTNCo-nlkWsVrRwEXTx4",
   authDomain: "simple-survey-form.firebaseapp.com",
+  databaseURL:
+    "https://simple-survey-form-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "simple-survey-form",
   storageBucket: "simple-survey-form.appspot.com",
   messagingSenderId: "839193772619",
@@ -29,6 +35,10 @@ const curKnowledge = document.querySelector("#curKnowledge");
 const aim = document.querySelector("#aim");
 const dreamProject = document.querySelector("#dreamProject");
 
+const submitBtn = document.querySelector("#submitBtn");
+// const getBtn = document.querySelector("#getBtn");
+// const deleteBtn = document.querySelector("#deleteBtn");
+
 function checkCount(str) {
   var count = 0;
   var splitString = str.split(" ");
@@ -45,7 +55,7 @@ function checkCount(str) {
   }
 }
 
-form.addEventListener("submit", (e) => {
+submitBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
   if (!checkCount(dreamProject.value)) {
@@ -68,3 +78,58 @@ form.addEventListener("submit", (e) => {
       alert(err);
     });
 });
+
+// getBtn.addEventListener("click", (e) => {
+//   e.preventDefault();
+
+//   getDocs(colRef)
+//     .then((snapshot) => {
+//       let formData = [];
+//       snapshot.docs.forEach((doc) => {
+//         formData.push({ ...doc.data(), id: doc.id });
+//       });
+
+//       console.log(formData);
+//     })
+//     .catch((err) => {
+//       alert(err);
+//     });
+// });
+
+// deleteBtn.addEventListener("click", (e) => {
+//   e.preventDefault();
+
+//   const docRef = doc(db, "formData", "e2Efl5n4tOeLVn9Mmw5b");
+//   deleteDoc(docRef)
+//     .then((result) => {
+//       if (result) {
+//         alert("deleted doc with given id");
+//       } else {
+//         alert("document not found in db");
+//       }
+
+//       form.reset();
+//     })
+//     .catch((err) => {
+//       alert(err);
+//     });
+// });
+
+// getBtn.addEventListener("click", (e) => {
+//   e.preventDefault();
+
+//   const docRef = doc(db, "formData", "pblmB0QLCVJw76N1Ty34");
+//   getDoc(docRef)
+//     .then((result) => {
+//       if (result.exists()) {
+//         console.log(result.data());
+//       } else {
+//         alert("document not found in db");
+//       }
+
+//       form.reset();
+//     })
+//     .catch((err) => {
+//       alert(err);
+//     });
+// });
